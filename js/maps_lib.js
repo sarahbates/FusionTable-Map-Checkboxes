@@ -95,7 +95,7 @@ var MapsLib = {
     //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
     
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
-        var type_column = "'TypeNum'";
+        var type_column = "'Grade Levels'";
     var searchType = type_column + " IN (-1,";
     if ( $("#cbType1").is(':checked')) searchType += "1,";
     if ( $("#cbType2").is(':checked')) searchType += "2,";
