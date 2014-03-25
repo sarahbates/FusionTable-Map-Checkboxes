@@ -23,7 +23,7 @@ var MapsLib = {
 
   //MODIFY the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1uAKbe1PhZBqd2pcMjm4Qa8FogeK0phNl9L5hUlI",
+  fusionTableId:      "1DPfHgYlEN0IhD73T6EZi86obbBg0D9Mwj6EKVRTx",
 
   //MODIFY Google Fusion Tables API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -40,7 +40,7 @@ var MapsLib = {
   recordNamePlural:   "results",
 
   searchRadius:       805,            //in meters ~ 1/2 mile
-  defaultZoom:        13,             //zoom level when map is loaded (bigger is more zoomed in)
+  defaultZoom:        11,             //zoom level when map is loaded (bigger is more zoomed in)
   addrMarkerImage:    'images/blue-pushpin.png',
   currentPinpoint:    null,
 
@@ -93,24 +93,16 @@ var MapsLib = {
 
     //---MODIFY column header and values below to match your Google Fusion Table AND index.html
     //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
-    var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Preschool");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("Pre-K Programs");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("Home Care");
-    if ( $("#cbType4").is(':checked')) tempWhereClause.push("Elementary");
-    if ( $("#cbType5").is(':checked')) tempWhereClause.push("High School");
-    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
-
+    
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
-    /*    var type_column = "'TypeNum'";
+        var type_column = "'Grade Levels'";
     var searchType = type_column + " IN (-1,";
     if ( $("#cbType1").is(':checked')) searchType += "1,";
     if ( $("#cbType2").is(':checked')) searchType += "2,";
     if ( $("#cbType3").is(':checked')) searchType += "3,";
     if ( $("#cbType4").is(':checked')) searchType += "4,";
     if ( $("#cbType5").is(':checked')) searchType += "5,";
-    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";*/
+    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
 
     //-------end of custom filters--------
 
